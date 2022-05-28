@@ -8,7 +8,7 @@
 
 <script>
 import ForumList from '@/components/ForumList'
-import sourceData from '@/data.json'
+
 export default {
   components: {
     ForumList
