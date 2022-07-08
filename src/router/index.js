@@ -7,6 +7,7 @@ import Forum from '@/pages/Forum'
 import Category from '@/pages/Category'
 import Profile from '@/pages/Profile'
 import sourceData from '@/data.json'
+import { findById } from '@/helpers'
 
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -47,7 +48,7 @@ const routes = [
     props: true,
     beforeEnter (to, from, next) {
       // check if thread exists
-      const threadExists = sourceData.threads.find(thread => thread.id === to.params.id)
+      const threadExists = findById(sourceData.threads, to.params.id)
       // if exists continue
       if (threadExists) {
         return next()
